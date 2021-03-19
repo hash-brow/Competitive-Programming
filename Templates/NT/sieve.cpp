@@ -14,7 +14,7 @@ void sieve(){
 		primes.push_back(i);
 		spf[i] = i;
 		for(int j = i*i; j < MXN; j += i){
-			prime[j] = i;
+			prime[j] = 0;
 			spf[j] = i;
 		}
 	}
