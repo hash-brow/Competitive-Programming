@@ -1,15 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct segtree{
+struct SegmentTree{
 	vector<int64_t> st;
 	int sz; 
+	
 	void init(int n){
 		sz = 1; 
 		while(sz < n) 
 			sz *= 2; 
 		st.assign(2*sz, 0); 
 	}
+
 	void build(vector<int64_t>& a, int x, int l, int r){
 		if(r - l == 1){
 			if(l < a.size())
@@ -21,6 +23,7 @@ struct segtree{
 		build(a, 2*x+2, mid, r); 
 		st[x] = st[2*x+1] + st[2*x+2]; 
 	}
+	
 	void set(int idx, int64_t v, int x, int lx, int rx){
 		if(rx - lx == 1){
 			st[x] += v; 
@@ -31,32 +34,41 @@ struct segtree{
 			set(idx, v, 2*x+1, lx, mid); 
 		else 
 			set(idx, v, 2*x+2, mid, rx); 
+	
 		st[x] = st[2*x+1] + st[2*x+2]; 
 	}
+	
 	int64_t query(int l, int r, int x, int lx, int rx){
 		if(rx <= l || lx >= r) 
 			return 0; 
 		if(lx >= l && rx <= r) 
 			return st[x]; 
+	
 		int mid = (lx + rx)/2; 
+	
 		return query(l, r, 2*x+1, lx, mid) + query(l, r, 2*x+2, mid, rx); 
 	}
+	
 	void set(int idx, int64_t v){
 		set(idx, v, 0, 0, sz); 
 	}
+	
 	int64_t query(int l, int r){
 		return query(l, r, 0, 0, sz); 
 	}
+	
 	void build(vector<int64_t>& a){
 		build(a, 0, 0, sz); 
 	}
 };
+
 struct DSU{
 	vector<int> par;
 	int c, l; 
 	vector<vector<int>> adj, up; 
 	vector<int64_t> weight; 
 	vector<int> tin, tout; 
+ 	
  	void init(int n){
 		l = log2(2*n-1); 
 		c = n; 
@@ -84,6 +96,7 @@ struct DSU{
 		c++; 
 		return 1; 
 	}
+
 	int timer = 0; 
 	void dfs(int node, int par){
 		tin[node] = timer++;
@@ -98,7 +111,9 @@ struct DSU{
 
 		tout[node] = timer++; 
 	}
-	segtree val; 
+	
+	SegmentTree val; 
+	
 	void seg_init(int n, vector<int64_t>& a){
 		val.init(2*(2*n - 1)); 
 		vector<int64_t> b(2*(2*n - 1), 0); 
@@ -107,6 +122,7 @@ struct DSU{
 
 		val.build(b); 
 	}
+	
 	int64_t query(int x, int64_t k, int64_t p){
 		val.set(tin[x], p); 
 
