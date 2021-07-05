@@ -1,0 +1,33 @@
+
+A lot of standard optimization tricks and some advanced stuff : https://robert1003.github.io/
+
+Basic Graphs:
+  Shortest Paths : https://codeforces.com/blog/entry/45897
+
+DP:
+  Basic DP : https://codeforces.com/blog/entry/43256, https://codeforces.com/blog/entry/67679
+  Tree DP : https://codeforces.com/blog/entry/20935
+  Digit DP : https://codeforces.com/blog/entry/77096
+  Advanced Tricks : https://codeforces.com/blog/entry/47764
+  Alien's Trick : https://codeforces.com/blog/entry/68778, https://codeforces.com/blog/entry/68778#comment-700891
+
+Trees:
+  Path updates using fenwick trees : https://codeforces.com/blog/entry/78564
+  Techniques for tree problems : https://codeforces.com/blog/entry/88669
+  Reachability Trees : https://codeforces.com/blog/entry/85714
+  Centroid Decomposition : 
+    https://medium.com/carpanese/an-illustrated-introduction-to-centroid-decomposition-8c1989d53308
+    https://codeforces.com/blog/entry/52492
+    https://threadsiiithyderabad.quora.com/Centroid-Decomposition-of-a-Tree
+  Heavy Light Decomposition : 
+    https://codeforces.com/blog/entry/81317
+    https://blog.anudeep2011.com/heavy-light-decomposition/
+    
+Math:
+  Basics NT : https://codeforces.com/blog/entry/46620
+  Catalan Numbers : https://codeforces.com/blog/entry/87585
+  PIE : https://codeforces.com/blog/entry/64625
+  
+Game Theory:
+  https://codeforces.com/blog/entry/66040
+  https://codeforces.com/blog/entry/85984
