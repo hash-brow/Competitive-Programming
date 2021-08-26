@@ -1,6 +1,7 @@
 const int MXN = 100000;
 const int MXK = 20;
 
+template<typename T>
 struct SparseTable{
 	int st[MXK][MXK];
 	int log[MXN];
