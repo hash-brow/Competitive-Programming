@@ -1,5 +1,5 @@
 /*
-Sparse Min LiChao Tree
+Sparse Max LiChao Tree
 */
 
 template<typename T>
